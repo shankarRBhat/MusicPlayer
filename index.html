@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse Music Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="player-card" aria-label="Music player panel">
+        <div class="top-bar">
+          <span class="brand-pill">Pulse</span>
+          <span id="track-counter" class="track-counter">01 / 12</span>
+        </div>
+
+        <div class="artwork" aria-label="Album artwork">
+          <img id="cover-art" src="Images/All.jpg" alt="Album artwork" />
+        </div>
+
+        <div class="meta-block">
+          <p class="eyebrow">Now playing</p>
+          <h1 id="song-title">Loading...</h1>
+          <p id="song-artist" class="artist">Please wait</p>
+        </div>
+
+        <div class="progress-panel">
+          <div class="time-row">
+            <span id="current-time">0:00</span>
+            <span id="total-time">0:00</span>
+          </div>
+          <input id="progress-bar" type="range" min="0" max="100" value="0" aria-label="Track progress" />
+        </div>
+
+        <div class="controls" aria-label="Playback controls">
+          <button id="prev-btn" class="icon-btn" type="button" aria-label="Previous song">⏮</button>
+          <button id="play-btn" class="play-btn" type="button" aria-label="Play or pause">▶</button>
+          <button id="next-btn" class="icon-btn" type="button" aria-label="Next song">⏭</button>
+        </div>
+
+        <div class="volume-row">
+          <span class="volume-label">🔊</span>
+          <input id="volume-bar" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume control" />
+        </div>
+
+        <div class="playlist-panel" aria-label="Playlist selection">
+          <div class="playlist-label">Playlists</div>
+          <div id="playlist-list" class="playlist-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <audio id="audio" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
